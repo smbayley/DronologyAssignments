@@ -22,6 +22,7 @@ As specified in the assignment, we must be able to run your program with:
 ```bash
 python main.py <path_to_configuration_file>
 ```
+I've added an [additional optional argument](https://github.com/smbayley/DronologyAssignments/blob/master/collision_avoidance/main.py#L140) (ardupath) in main.py. __To be safe, don't change any of the arguments that have already been specified, or the method signature of main.__ If you'd like to add additional __optional__ command line arguments and/or __keyword arguments__ to main, that is OK. You don't want to be the one that I'm unable to run your code because you changed the order of the arguments or removed an argument. :) 
 
 ## What's left?
 You'll need to write code that makes sure drones get to all their waypoints without crashing into each other. Some things to consider:
