@@ -9,6 +9,8 @@ import signal
 import util
 
 DO_CONT = False
+
+# make sure you change this so that it's correct for your system 
 ARDUPATH = os.path.join('/', 'home', 'bayley', 'git', 'ardupilot')
 
 
@@ -54,7 +56,11 @@ def state_out_work(dronology, vehicles):
         time.sleep(1.0)
 
 
-def main(path_to_config):
+def main(path_to_config, ardupath=None):
+    if ardupath is not None:
+        global ARDUPATH
+        ARDUPATH = ardupath
+    
     global DO_CONT
     DO_CONT = True
 
@@ -131,5 +137,6 @@ def main(path_to_config):
 if __name__ == '__main__':
     ap = argparse.ArgumentParser()
     ap.add_argument('path_to_config', type=str, help='the path to the drone configuration file.')
+    ap.add_argument('--ardupath', type=str, default=ARDUPATH)
     args = ap.parse_args()
-    main(args.path_to_config)
+    main(args.path_to_config, ardupath=args.ardupath)
