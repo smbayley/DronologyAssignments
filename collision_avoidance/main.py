@@ -94,7 +94,8 @@ def main(path_to_config):
 
     signal.signal(signal.SIGINT, stop)
     signal.signal(signal.SIGTERM, stop)
-
+    
+    # Start up all the drones specified in the json configuration file
     for i, v_config in enumerate(config):
         home = v_config['start']
         vehicle, sitl = connect_vehicle(i, home)
@@ -105,8 +106,7 @@ def main(path_to_config):
         sitls.append(sitl)
         vehicles.append(vehicle)
         routes.append(v_config['waypoints'])
-
-    print('DONE initializing !!')
+        
     # Create a thread for sending the state of drones back to Dronology
     w0 = threading.Thread(target=state_out_work, args=(dronology, vehicles))
     # Start the thread.
