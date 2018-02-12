@@ -34,7 +34,7 @@ You'll need to write code that makes sure drones get to all their waypoints with
 * We have not officially decided what constitutes a collision. I'm thinking that if the distance between any two drones is <= 1 meter, we will call that a collision. We will clarify this before the due date. 
 * We will use _laser distance_ in our evaluation. For small distances (i.e., <= 5km) this is more accurate.  This means that if you use an approximation (e.g., [haversine](https://en.wikipedia.org/wiki/Haversine_formula)), your distance might not match our distance. If you want to be extra safe, just use a larger separation distance. In other words, if we say 1m equals collision, assume that you need to make sure drones don't get within 5m of each other. Alternatively, you can learn about [better ways to deal with geographical positions](http://nvector.readthedocs.io/en/latest/src/overview.html) (probably not the best use of your time).
 * You can assume that all of our tests will be done in South Bend. You don't need to worry about discontinuities at the equator or singularities at the poles. 
-* __Get started early!__ This is a difficult assignment. Try to be creative and have some fun with it. We don't expect you to develop a perfect solution. However, it should be clear to us that you suffered while you were tyring to! ;) 
+* __Get started early!__ This is a difficult assignment. Try to be creative. We don't expect you to develop a perfect solution. However, it should be clear to us that you suffered while you were tyring to! ;) 
 
 ## Questions?
 Email sbayley@nd.edu. If you have a question about the code or the instructions, I'm sure others are confused as well. Let me know!
