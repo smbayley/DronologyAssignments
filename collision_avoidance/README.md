@@ -31,7 +31,12 @@ You'll need to write code that makes sure drones get to all their waypoints with
 * After making it this far (and verifying that things appear to be correct in the Dronology UI), you can start working on your collision avoidance algorithm. 
 * Start with simple test cases and work your way up. 
 
+## Rules
+1. Drones must maintain an altitude between 20 and 40 meters at all times. 
+2. Drones must reach every waypoint in their route. Getting within 3m of a waypoint is considered "reaching" it. 
+
 ## Final Notes
+* Our evaluation will not use more than 10 drones. _You don't need to write an algo to handle hundreds of drones_. 
 * We have not officially decided what constitutes a collision. I'm thinking that if the distance between any two drones is <= 1 meter, we will call that a collision. We will clarify this before the due date. 
 * We will use _laser distance_ in our evaluation. For small distances (i.e., <= 5km) this is more accurate.  This means that if you use an approximation (e.g., [haversine](https://en.wikipedia.org/wiki/Haversine_formula)), your distance might not match our distance. If you want to be extra safe, just use a larger separation distance. In other words, if we say 1m equals collision, assume that you need to make sure drones don't get within 5m of each other. Alternatively, you can learn about [better ways to deal with geographical positions](http://nvector.readthedocs.io/en/latest/src/overview.html) (probably not the best use of your time).
 * You can assume that all of our tests will be done in South Bend. You don't need to worry about discontinuities at the equator or singularities at the poles. 
