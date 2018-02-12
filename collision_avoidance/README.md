@@ -34,6 +34,8 @@ You'll need to write code that makes sure drones get to all their waypoints with
 ## Rules
 1. Drones must maintain an altitude between 20 and 40 meters at all times. 
 2. Drones must reach every waypoint in their route. Getting within 3m of a waypoint is considered "reaching" it. 
+3. Drones should stay within 500m of their starting location. 
+4. Drones should travel at 10 m/s at all times except during collision avoidance maneuvers. 
 
 ## Final Notes
 * Our evaluation will not use more than 10 drones. _You don't need to write an algo to handle hundreds of drones_. 
