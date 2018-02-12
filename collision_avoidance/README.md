@@ -1,7 +1,5 @@
 # Collision Avoidance
 
-This is your one stop shop for collision avoidance resources. Hopefully the instructions and code provided here will be useful. Let me know if that's not the case! 
-
 ## Overview
 The assignment is pretty straightforward. We give you information about a set of drones (their starting location and the waypoints they should travel to), and you make sure that the drones get to all their waypoints. The tricky part is, of course, making sure that drones don't crash into each other. 
 
