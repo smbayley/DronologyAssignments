@@ -7,6 +7,17 @@ import threading
 import time
 import signal
 import util
+import logging
+
+_LOG = logging.getLogger(__name__)
+_LOG.setLevel(logging.INFO)
+
+fh = logging.FileHandler('main.log', mode='w')
+fh.setLevel(logging.INFO)
+formatter = logging.Formatter('| %(levelname)6s | %(funcName)8s:%(lineno)2d | %(message)s |')
+fh.setFormatter(formatter)
+_LOG.addHandler(fh)
+
 
 DO_CONT = False
 
@@ -51,7 +62,9 @@ def state_out_work(dronology, vehicles):
     while DO_CONT:
         for i, v in enumerate(vehicles):
             state = util.StateMessage.from_vehicle(v, get_vehicle_id(i))
-            dronology.send(str(state))
+            state_str = str(state)
+            _LOG.info(state_str)
+            dronology.send(state_str)
 
         time.sleep(1.0)
 
